@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+        let a = prompt("Enter a number:");
+        let isPrime = true;
+
+        if (a <= 1) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i < a; i++) {
+                if (a % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            document.write("Number is Prime");
+        } else {
+            document.write("Number is Not Prime");
+        }
+        </script>
+    </body>
+</html>    
