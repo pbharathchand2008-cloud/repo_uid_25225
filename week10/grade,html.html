@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            width: 150px;
+            margin: 5px;
+            border: 2px solid #555;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Grade Calculator</h2>
+
+    <input type="number" id="m1" placeholder="Subject 1"><br>
+    <input type="number" id="m2" placeholder="Subject 2"><br>
+    <input type="number" id="m3" placeholder="Subject 3"><br>
+    <input type="number" id="m4" placeholder="Subject 4"><br>
+    <input type="number" id="m5" placeholder="Subject 5"><br>
+    <input type="number" id="m6" placeholder="Subject 6"><br>
+
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateGrade() {
+            var m1 = parseFloat(document.getElementById("m1").value);
+            var m2 = parseFloat(document.getElementById("m2").value);
+            var m3 = parseFloat(document.getElementById("m3").value);
+            var m4 = parseFloat(document.getElementById("m4").value);
+            var m5 = parseFloat(document.getElementById("m5").value);
+            var m6 = parseFloat(document.getElementById("m6").value);
+
+            if (isNaN(m1) || isNaN(m2) || isNaN(m3) || isNaN(m4) || isNaN(m5) || isNaN(m6)) {
+                document.getElementById("result").innerHTML = "Please enter all marks.";
+                return;
+            }
+
+            var avg = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+            var grade = "";
+
+            if (avg < 60) {
+                grade = "F";
+            } 
+            else if (avg < 70) {
+                grade = "D";
+            } 
+            else if (avg < 80) {
+                grade = "C";
+            } 
+            else if (avg < 90) {
+                grade = "B";
+            } 
+            else if (avg <= 100) {
+                grade = "A";
+            } 
+            else {
+                grade = "Invalid Marks";
+            }
+
+            document.getElementById("result").innerHTML = 
+                "Average: " + avg.toFixed(2) + "<br>Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>LOL / OK Checker</h2>
+    <input type="number" id="num1" placeholder="Enter a number">
+    <button onclick="checkLOL()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkLOL() {
+            var num = parseInt(document.getElementById("num1").value);
+
+            if (isNaN(num)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+                return;
+            }
+
+            var result = "";
+
+            if (num % 3 === 0 && num % 5 === 0) {
+                result = "LOL OK";
+            } 
+            else if (num % 3 === 0) {
+                result = "LOL";
+            } 
+            else if (num % 5 === 0) {
+                result = "OK";
+            } 
+            else {
+                result = num;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

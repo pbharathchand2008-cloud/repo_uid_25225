@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e2c3;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* Container for all iframes */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Each iframe box */
+.card {
+  background-color: #f5f2dc;
+  padding: 15px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 420px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Titles inside cards */
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* iframe styling */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Two Forms Displayed Using Iframes</h2>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Form Page</h3>
+    <iframe src="Form.html"></iframe>
+  </div>
+
+  <div class="card">
+    <h3>Wikipedia</h3>
+    <iframe src="https://www.wikipedia.org"></iframe>
+  </div>
+
+  <div class="card">
+    <h3>YouTube</h3>
+    <iframe src="https://www.youtube.com/watch?v=tH_AbG1JMOE"></iframe>
+  </div>
+
+</div>
+
+</body>
+</html>

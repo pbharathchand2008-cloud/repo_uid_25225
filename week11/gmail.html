@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Email Validation</title>
+        <style>
+            body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            input {
+                padding: 10px;
+                width: 200px;
+                margin: 5px;
+                border: 2px solid #555;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #1976D2;
+            }
+        </style>
+    </head>
+        <body>
+            <h2>Enter your email</h2>
+
+            <input type="text" id="email" placeholder="Enter Email"><br><br>
+            <button onclick="checkEmail()">Submit</button>
+
+            <div id="result"></div>
+
+            <script>
+                function checkEmail() {
+                    var input = document.getElementById("email").value;
+                    var mailformat = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+
+                    if (input.match(mailformat)) {
+                        document.getElementById("result").innerHTML = "Valid email address!";
+                    } else {
+                        document.getElementById("result").innerHTML = "Invalid email address!";
+                    }
+                }
+            </script>
+
+        </body>
+
+</html>

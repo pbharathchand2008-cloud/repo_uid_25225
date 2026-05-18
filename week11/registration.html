@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+            body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            input {
+                padding: 10px;
+                width: 200px;
+                margin: 5px;
+                border: 2px solid #555;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #1976D2;
+            }
+        </style>
+</head>
+
+<body>
+
+    <h2>Registration Form</h2>
+
+    <!-- Name -->
+    <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+    <!-- Email -->
+    <input type="text" id="email" placeholder="Enter Email"><br><br>
+
+    <!-- Password -->
+    <input type="password" id="password" placeholder="Enter Password"><br><br>
+
+    <button onclick="validateForm()">Register</button>
+
+    <div id="result"></div>
+
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var mailformat = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+
+            // Name validation
+            if (name === "") {
+                document.getElementById("result").innerHTML = "Name cannot be empty";
+                return;
+            }
+
+            // Email validation
+            if (!email.match(mailformat)) {
+                document.getElementById("result").innerHTML = "Invalid email format";
+                return;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("result").innerHTML = "Password must be at least 6 characters";
+                return;
+            }
+
+            // If all valid
+            document.getElementById("result").innerHTML = "Registration Successful!";
+        }
+    </script>
+
+</body>
+</html>

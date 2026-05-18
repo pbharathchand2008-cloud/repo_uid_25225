@@ -1,0 +1,63 @@
+<html>
+    <head>
+       <title>Username Validation</title>
+      <style>
+            body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            input {
+                padding: 10px;
+                width: 200px;
+                margin: 5px;
+                border: 2px solid #555;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #1976D2;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Enter your credentials</h1>
+
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <button onclick="validateUsername()">Submit</button>
+
+        <div id="result"></div>
+
+        <script>
+            function username(name) {
+                if (name.length < 5) {
+                    document.getElementById("result").innerHTML = 
+                        "Your username is less than 5 characters";
+                } else {
+                    document.getElementById("result").innerHTML = 
+                        "Your username is " + name;
+                }
+            }
+
+            function validateUsername() {
+                let name = document.getElementById("username").value;
+                username(name);
+            }
+        </script>
+    </body>
+</html>    

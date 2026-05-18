@@ -1,0 +1,59 @@
+<html>
+    <head>
+       <title>Phone number Validation</title>
+      <style>
+            body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f8ff;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            input {
+                padding: 10px;
+                width: 200px;
+                margin: 5px;
+                border: 2px solid #555;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #2196F3;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #1976D2;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Enter your credentials</h1>
+
+        <input type="text" id="phonenumber" placeholder="Phone Number"><br><br>
+        <button onclick="validatePhoneNumber()">Submit</button>
+
+        <div id="result"></div>
+
+        <script>
+            function validatePhoneNumber() {
+                var phone = document.getElementById("phonenumber").value;
+                var phoneformat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+                if (phone.match(phoneformat)) {
+                    document.getElementById("result").innerHTML = "Valid phone number!";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid phone number!";
+                }
+            }
+        </script>
+    </body>
+</html>    
